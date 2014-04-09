@@ -413,6 +413,7 @@ function(require, utils, models, simpleMessageTemplate, createClusterWizardTempl
     clusterWizardPanes.ClusterNetworkPane = views.WizardPane.extend({
         title: 'dialog.create_cluster_wizard.network.title',
         template: _.template(clusterNetworkPaneTemplate),
+        deps: [clusterWizardPanes.ClusterNameAndReleasePane, clusterWizardPanes.ClusterComputePane],
         events: {
             'change input[name=manager]': 'onManagerChange'
         },
